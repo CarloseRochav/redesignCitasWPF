@@ -1,0 +1,244 @@
+﻿<Window x:Class="redisenoCItasMedicasWPF.medicoHome"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:redisenoCItasMedicasWPF"
+        mc:Ignorable="d"
+        Title="medicoHome" Height="450" Width="800">
+    <Grid>
+
+        <!---Set Background image on grid-->
+        <Grid.Background>
+            <ImageBrush></ImageBrush>
+        </Grid.Background>
+        
+        <!---Recursos de este grid-->
+        <Grid.Resources>
+            <ImageBrush x:Key="backIcon" ImageSource="https://cdn-icons-png.flaticon.com/512/0/340.png"></ImageBrush>
+            <ImageBrush x:Key="profileImage" ImageSource="http://photos.demandstudios.com/getty/article/41/55/86508965.jpg"></ImageBrush>
+            
+        </Grid.Resources>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".3*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height=".2*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!---Menu-->
+        <Grid Grid.Row="0" Grid.RowSpan="5" Grid.Column="0" 
+              Background="#262861" Opacity=".9">
+            
+            <!---Resources del grid-->
+            <Grid.Resources>                
+                <!--<ImageBrush x:Key="profileImage" ImageSource="http://photos.demandstudios.com/getty/article/41/55/86508965.jpg"></ImageBrush>-->
+                <BitmapImage x:Key="profileImage" UriSource="http://photos.demandstudios.com/getty/article/41/55/86508965.jpg" />
+                <ImageBrush x:Key="helpIcon" Stretch="Fill"
+                 ImageSource="https://icons.iconarchive.com/icons/visualpharm/must-have/256/Help-icon.png"></ImageBrush>
+            </Grid.Resources>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".4*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height=".5*"></RowDefinition>
+                <RowDefinition Height=".5*"></RowDefinition>
+                <RowDefinition Height=".5*"></RowDefinition>
+                
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <!---Nombre Admin-->
+            <TextBlock Grid.Column="0" Foreground="White" FontSize="18" 
+                       TextAlignment="Center" Grid.ColumnSpan="2">
+                Dr. Mario Espinoza</TextBlock>
+
+            <!---Imagen Admin-->
+            <!--Borde Customizado para poder aplicar redondeado a una imagen-->
+            <Border Canvas.Left="55"
+             Canvas.Top="30"
+             Width="100"
+             Height="Auto"
+             Margin="5"
+             VerticalAlignment="Top"
+             BorderBrush="#FF3B5998"
+             BorderThickness="1"
+             CornerRadius="18"
+                Grid.Row="1"
+                    Grid.ColumnSpan="2">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="5"
+                               Opacity=".3"
+                               ShadowDepth="1" />
+                </Border.Effect>
+                <Border Name="ReceiverColor"
+                 BorderBrush="Black"
+                 BorderThickness="2"
+                 CornerRadius="10">
+                    <Grid>
+                        <Border Name="Mask"
+                         Background="White"
+                         BorderBrush="#FF3B5998"
+                         BorderThickness=".1"
+                         CornerRadius="10">
+                        </Border>
+                        <StackPanel>
+                            <Image 
+                                Source="{StaticResource profileImage}"
+                                Grid.Column="0" Grid.Row="1">
+                            </Image>
+                            <StackPanel.OpacityMask>
+                                <VisualBrush Visual="{Binding ElementName=Mask}" />
+                            </StackPanel.OpacityMask>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Border>
+
+
+            <TextBlock Grid.Row="2" FontFamily="arial" FontSize="30"
+                       Foreground="White" Margin="10,20,3,2" 
+                       Grid.ColumnSpan="2">
+                Citas
+            </TextBlock>
+            <TextBlock Grid.Row="2" FontFamily="arial" FontSize="30"
+                       Foreground="White" Margin="10,70,3,6" Grid.RowSpan="2"
+                       Grid.ColumnSpan="2">
+                Pacientes
+            </TextBlock>
+            
+            <!---Button Regresar-->
+            <Button Grid.Column="0" Grid.Row="4"
+                    Background="{StaticResource backIcon}" Margin="15"
+                    BorderThickness="0"
+                    ></Button>
+            <!---Button Help-->
+            <Button Grid.Row="4" Grid.Column="1"
+                    Background="{StaticResource helpIcon}" Margin="15"
+                    >
+            </Button>
+
+        </Grid>
+
+        <!---Title-->
+
+        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="15,21,15,9"
+                   Foreground="Black" FontSize="22" FontWeight="Black"
+                   FontFamily="arial" Opacity=".7" Padding="10" 
+                   TextAlignment="Center">
+                Citas
+        </TextBlock>
+
+
+        <!--Redondear Grid Empleados:Departamentos-->
+        <!--<Border Background="#262861" BorderBrush="Black" 
+                BorderThickness="1" CornerRadius="30,30,30,30"
+                Grid.Row="2" Grid.Column="1" Grid.RowSpan="3"
+                Grid.ColumnSpan="3" Margin="60,0,40,30" Opacity="1">-->
+
+        <Grid Grid.Row="2" Grid.RowSpan="3" Grid.Column="1" 
+              Grid.ColumnSpan="3" Margin="60,0,40,30">
+            <Grid.Resources>
+                <!---Imagenes-->
+                <ImageBrush x:Key="addUser" ImageSource="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Add_user_icon_%28blue%29.svg/1200px-Add_user_icon_%28blue%29.svg.png"></ImageBrush>
+                <ImageBrush x:Key="editUser" ImageSource="https://static.thenounproject.com/png/88288-200.png"></ImageBrush>
+                <ImageBrush x:Key="queryUser" ImageSource="http://cdn.onlinewebfonts.com/svg/img_385849.png"></ImageBrush>
+                <ImageBrush x:Key="deleteUser" ImageSource="https://www.iconpacks.net/icons/1/free-remove-user-icon-303-thumb.png"></ImageBrush>
+            </Grid.Resources>
+
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+
+            <TextBlock Grid.Row="0" Foreground="Black" FontWeight="Bold" 
+                       FontSize="20"
+                        Padding="20,5,10,10" >
+            Consultar</TextBlock>
+            <TextBlock Grid.Row="1" Foreground="Black" FontWeight="Bold" 
+                       FontSize="20" 
+                       Padding="20,5,10,10" >
+            Modificar Datos</TextBlock>
+            <TextBlock Grid.Row="2" Foreground="Black" FontWeight="Bold" 
+                       FontSize="20" 
+                       Padding="20,5,10,10" >
+            Dar de alta</TextBlock>
+            <TextBlock Grid.Row="3" Foreground="Black" FontWeight="Bold" 
+                       FontSize="20" 
+                       Padding="20,5,10,10" >
+            Dar de baja</TextBlock>
+
+            <!---Icons-->
+            <Button Grid.Column="2"
+                    Background="{StaticResource queryUser}" Margin="70,2,70,2"
+                    BorderThickness="0"
+                    >
+            </Button>
+            <Button Grid.Column="2" Grid.Row="1"
+                    Background="{StaticResource editUser}" Margin="70,2,70,2"
+                    BorderThickness="0"
+                    >
+            </Button>
+            <Button Grid.Column="2" Grid.Row="2"
+                    Background="{StaticResource addUser}" Margin="70,2,70,2"
+                    BorderThickness="0"
+                    >
+            </Button>
+            
+            <Button Grid.Column="2" Grid.Row="3"
+                    Background="{StaticResource deleteUser}" Margin="70,2,70,2"
+                    BorderThickness="0"
+                    >
+            </Button>
+
+        </Grid>
+        <!--</Border>-->
+
+
+        <!---Menu de estado-->
+        <Grid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4" 
+              Background="DarkBlue" Opacity=".5">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Foreground="White" FontSize="16" 
+                       TextAlignment="Center">
+                        Online</TextBlock>
+            <TextBlock Grid.Column="1" Foreground="White" FontSize="16" 
+                       TextAlignment="Center">
+                        Salir</TextBlock>
+            <TextBlock Grid.Column="2" Foreground="White" FontSize="16" 
+                       TextAlignment="Center" FontWeight="Bold">
+                        05:15 PM</TextBlock>
+
+        </Grid>
+
+
+
+    </Grid>
+</Window>

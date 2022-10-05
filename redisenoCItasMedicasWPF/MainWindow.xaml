@@ -1,0 +1,122 @@
+﻿<Window x:Class="redisenoCItasMedicasWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:redisenoCItasMedicasWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    
+    <Grid ><!---Grid Principal de ventanan-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".5*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height=".4*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <!--Menu superior-->
+        <Grid Grid.Column="0" Grid.ColumnSpan="4" 
+              Background="#262861" Opacity=".8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center"
+                   FontSize="30" Padding="10" Foreground="White">
+            Acceso al Sistema
+            </TextBlock>
+        </Grid>
+        
+        
+        
+        <!--BOrder; Para redondear carta de login-->
+        <Border Grid.Row="1" Grid.RowSpan="3"
+              Grid.Column="1" Grid.ColumnSpan="2"
+            Background="White" BorderBrush="Black" 
+            BorderThickness="4" CornerRadius="7"
+                Margin="20">
+
+            <!--Tarjeta Login-->
+            <Grid Grid.Row="1" Grid.RowSpan="3"
+              Grid.Column="1" Grid.ColumnSpan="2"
+              Background="#262861" Opacity=".9">
+
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <!---Campos-->
+                <TextBlock Grid.ColumnSpan="2" TextAlignment="Center"
+                           FontSize="25" Foreground="White" >
+                    Usuario
+                </TextBlock>
+                <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                         Margin="10" TextAlignment="Center">                    
+                </TextBox>
+                
+                <TextBlock Grid.Row="2"
+                    Grid.ColumnSpan="2" TextAlignment="Center"
+                           FontSize="25" Foreground="White">
+                    Contraseña
+                </TextBlock>
+                <TextBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                         Margin="10" TextAlignment="Center"></TextBox>
+
+                <Button Grid.Row="4" Grid.RowSpan="5" Grid.Column="0"
+                        Foreground="#262861" Background="White"
+                        FontWeight="Bold" FontSize="20" Margin="30,30,30,30"
+                        >Limpiar</Button>
+
+                <Button Grid.Row="4" Grid.RowSpan="5" Grid.Column="1"
+                        Foreground="#262861" Background="White"
+                        FontWeight="Bold" FontSize="20" Margin="30,30,30,30"
+                >Ingresar</Button>
+            </Grid>            
+        </Border>
+
+        
+        <!---Menu Inferior de Estado-->
+        <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4"
+              Background="#262861" Opacity=".8">
+            
+            <!---Aqui añado recursos que usare dentro de estre grid y añade un id al recurso-->
+            <Grid.Resources>
+                <ImageBrush x:Key="helpIcon" Stretch="Fill"
+                 ImageSource="https://icons.iconarchive.com/icons/visualpharm/must-have/256/Help-icon.png"></ImageBrush>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="2"
+                    Background="{StaticResource helpIcon}" Margin="70,2,70,2"
+                    >               
+            </Button>
+        </Grid>
+        
+        
+    </Grid>
+</Window>
